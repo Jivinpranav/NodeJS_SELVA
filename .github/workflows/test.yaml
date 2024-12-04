@@ -1,0 +1,17 @@
+name: Feature-Specific Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  feature-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Feature Branch
+        uses: actions/checkout@v3
+        with:
+          ref: feature/change-script
+
+      - name: Run Custom Script
+        run: echo "Running workflow in feature/change-script branch"
